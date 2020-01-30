@@ -46,3 +46,7 @@ class Robot(SingletonConfigurable):
     def stop(self):
         self.left_motor.value = 0
         self.right_motor.value = 0
+
+    def drive(self, lon=0.0, lat=0.0):
+        self.left_motor.value = lon+lat
+        self.right_motor.value =  lon-lat
